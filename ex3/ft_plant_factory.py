@@ -15,7 +15,7 @@ class Plant():
         self.name = name
         self.height = height
         self.age = age
-    
+
     def get_info(self):
         return f"Created: {self.name} ({self.height}cm, {self.age} days)"
 
