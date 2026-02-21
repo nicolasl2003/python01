@@ -1,12 +1,12 @@
 # *************************************************************************** #
 #                                                                             #
 #                                                         :::      ::::::::   #
-#    ft_plant_growth.py                                 :+:      :+:    :+:   #
+#    ft_plant_factory.py                                :+:      :+:    :+:   #
 #                                                     +:+ +:+         +:+     #
 #    By: nilinott <nilinott@student.42lyon.fr>      +#+  +:+       +#+        #
 #                                                 +#+#+#+#+#+   +#+           #
-#    Created: 2026/02/21 18:00:30 by nilinott          #+#    #+#             #
-#    Updated: 2026/02/21 18:00:31 by nilinott         ###   ########.fr       #
+#    Created: 2026/02/21 23:55:22 by nilinott          #+#    #+#             #
+#    Updated: 2026/02/21 23:55:25 by nilinott         ###   ########.fr       #
 #                                                                             #
 # *************************************************************************** #
 
@@ -15,27 +15,9 @@ class Plant():
         self.name = name
         self.height = height
         self.age = age
-
-    def grow(self):
-        self.height += 1
-
-    def age_up(self):
-        self.age += 1
-
+    
     def get_info(self):
-        return f"{self.name}: {self.height}cm, {self.age} days old"
-
-
-def grow_plant(plants, max_plant: int):
-    i: int = 0
-    j: int = 1
-    while (i < max_plant):
-        while (j < 7):
-            plants[i].grow()
-            plants[i].age_up()
-            j += 1
-        j = 0
-        i += 1
+        return f"Created: {self.name} ({self.height}cm, {self.age} days)"
 
 
 def display_plant(plants, max_plant: int):
@@ -46,23 +28,17 @@ def display_plant(plants, max_plant: int):
 
 
 def main() -> None:
-    max_plant: int = 0
-    result: int = 0
-
     plants = [
         Plant("Rose", 25, 30),
+        Plant("Oak", 200, 365),
+        Plant("Cactus", 5, 90),
+        Plant("Sunflower", 80, 45),
+        Plant("fern", 15, 120),
     ]
-    initial_plant = [plant.height for plant in plants]
     max_plant = len(plants)
-    print("=== Day 1 ===")
+    print("=== Plant Factory Output ===")
     display_plant(plants, max_plant)
-
-    grow_plant(plants, max_plant)
-
-    print("=== Day 7 ===")
-    display_plant(plants, max_plant)
-    result = plants[0].height - initial_plant[0]
-    print(f"Growth this week: +{result}cm")
+    print(f"\nTotal plants created: {max_plant}")
 
 
 if __name__ == "__main__":
