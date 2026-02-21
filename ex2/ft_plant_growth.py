@@ -46,7 +46,6 @@ def aff_plant(plants, max_plant: int):
 
 
 def main() -> None:
-    i: int = 0
     max_plant: int = 0
     result: int = 0
 
@@ -62,7 +61,7 @@ def main() -> None:
 
     print("=== Day 7 ===")
     aff_plant(plants, max_plant)
-    result = plants[i].height - initial_plant[i]
+    result = plants[0].height - initial_plant[0]
     print(f"Growth this week: +{result}cm")
 
 
