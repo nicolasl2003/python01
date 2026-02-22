@@ -19,14 +19,20 @@ class Plant():
     def set_height(self, height: int) -> None:
         self.height = height
 
+    def get_height(self):
+        return self.height
+
+    def set_age(self, age: int) -> None:
+        self.age = age
+
 
 def main() -> None:
     plants = [
         Plant("Rose", 25, 30),
     ]
 
-    plants.set_height(58)
-    print(plants.height)
+    plants[0].set_height(58)
+    print("=== Garden Security System ===")
 
 
 if __name__ == "__main__":
