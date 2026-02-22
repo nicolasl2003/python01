@@ -23,7 +23,7 @@ class SecurePlant():
             print("Security: Negative height rejected\n")
         else:
             self.__height = height
-            print(f"Height updated: {height}cm [OK]")
+            print(f"Height updated: {height}cm [\033[32mOK\033[37m]")
 
     def get_height(self):
         return self.__height
@@ -40,7 +40,7 @@ class SecurePlant():
             print("Security: Negative height rejected")
         else:
             self.__age = age
-            print(f"Age updated: {age} days [OK]\n")
+            print(f"Age updated: {age} days [\033[32mOK\033[37m]\n")
 
 
 def main() -> None:
