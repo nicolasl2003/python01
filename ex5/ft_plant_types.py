@@ -11,14 +11,45 @@
 # *************************************************************************** #
 
 class Plant():
-    def __init__(self, name: str, height: int, age: int):
-        self.name = name
-        self.height = height
-        self.age = age
+    def __init__(self, name: str, height: int, age: int, typep: str):
+        self.__name = name
+        self.__height = height
+        self.__age = age
+
+
+class Flower(Plant):
+    def __init__(self, name: str, height: int, age: int, color: str, bloom, typep: str):
+        super().__init__(name, height, age, typep)
+        self.color = color
+        self.bloom = bloom
+
+        if (bloom == True):
+            #print(f"{self.__name} is blooming beautifully!")
+            return
+
+
+#class Tree(Plant):
+ #   def __init__(self, name: str, height: int, age: int, ):
+
+
+def display_plant(plant):
+    i: int
+    max_plant: int
+
+    i = 0
+    max_plant = len(plant)
+
+    while (i < max_plant):
+        print()
+        i += 1
 
 
 def main() -> None:
     print("=== Garden Plant Types ===")
+    plant = {
+        Flower("Rose", 10, 20, "rouge", True, "flower")
+    }
+    display_plant(plant)
 
 
 if __name__ == "__main__":
