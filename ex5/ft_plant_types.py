@@ -29,16 +29,16 @@ class Plant():
 class Flower(Plant):
     def __init__(self, name: str, height: int, age: int, color: str, bloom):
         super().__init__(name, height, age)
-        self.color = color
-        self.bloom = bloom
+        self.__color = color
+        self.__bloom = bloom
 
     def get_bloom(self):
-        if (self.bloom):
+        if (self.__bloom):
             return f"{self.name()} is blooming beautifully!\n"
         return "\n"
 
     def get_color(self):
-        return f"{self.color} color"
+        return f"{self.__color} color"
 
     def get_plant(self):
         return (f"{self.name()} (Flower): "
@@ -49,14 +49,14 @@ class Flower(Plant):
 class Tree(Plant):
     def __init__(self, name: str, height: int, age: int, diameter: int):
         super().__init__(name, height, age)
-        self.diameter = diameter
+        self.__diameter = diameter
 
     def produce_shade(self):
-        result: int = (self.height() * self.diameter)
+        result: int = (self.height() * self.__diameter)
         return f"{self.name()} provides {result} square meters of shade\n"
 
     def trunk_diameter(self):
-        return f"{self.diameter} diameter"
+        return f"{self.__diameter} diameter"
 
     def get_plant(self):
         return (
